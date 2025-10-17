@@ -580,6 +580,12 @@
                 /* Adjust ribbon position */
             }
         }
+        /* --- E-Monitoring Button Padding Fix --- */
+        
+        .padding-button {
+            padding-left: 30px;
+            padding-right: 30px;
+        }
     </style>
 </head>
 
@@ -588,8 +594,7 @@
         <a href="index.html" class="logo">
             <img src="assets/aselogo.png" alt="ASE Infrastructure Logo">
         </a>
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainNav" aria-label="Toggle navigation" aria-expanded="false" aria-controls="mainNav">
-            <span class="sr-only">Toggle navigation</span>
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainNav">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
@@ -700,7 +705,7 @@
                         </div>
                     </div>
                     <div class="text-center m-t20">
-                        <a href="services.html" class="site-button btn-effect">View More Projects</a>
+                        <a href="services.html" class="site-button btn-effect padding-button ">View More Projects</a>
                     </div>
                 </div>
             </div>
@@ -710,7 +715,7 @@
                 <!-- TITLE START -->
                 <div class="p-b20">
                     <div class=" text-center">
-                        <h2 class="text-uppercase">How It Works?</h2>
+                        <h2 class="text-uppercase ">How It Works?</h2>
                         <div class="mt-separator-outer">
                             <div class="mt-separator bg-primary"></div>
                         </div>
@@ -783,7 +788,7 @@
         <div class="container">
             <div class="text-center needs-text">
                 <h2>One destination for all your construction needs</h2>
-                <div class="estimate"><a href="contactus.html" class="site-button btn-effect">Get a free estimate now</a></div>
+                <div class="estimate "><a href="contactus.html" class="site-button btn-effect" style="padding-left: 30px; padding-right: 30px;"> Get a free estimate now</a></div>
             </div>
 
         </div>
@@ -891,7 +896,7 @@
                 </div>
 
                 <div class="text-center m-b20">
-                    <a class="site-button btn-effect">our E-Monitoring Services</a>
+                    <a href="services.html" class="site-button btn-effect padding-button">our E-Monitoring Services</a>
                 </div>
                 <div class="call-us-section">
                     <div class="e-monitoring-grid">
@@ -979,6 +984,21 @@
             </div>
         </div>
     </footer>
+    <script>
+        // --- JavaScript for Mobile Navigation Toggle ---
+        document.querySelector('.navbar-toggle').addEventListener('click', function() {
+            document.querySelector('.main-nav').classList.toggle('show');
+        });
+        // --- JavaScript for Header Scroll Effect ---
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('mainHeader');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
     <script>
         const footer = document.querySelector(".site-footer");
 
