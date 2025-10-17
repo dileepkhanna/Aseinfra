@@ -1,0 +1,99 @@
+/* Banner Lead Form Styling */
+
+.banner-leadform {
+    height: 500px;
+    width: 400px;
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    background: #ffffff;
+    border-radius: 8px;
+    margin: auto;
+    border: 1px solid #f8a504;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    /* Softer shadow */
+    transform: translateY(-50%);
+    z-index: 10;
+    padding: 15px;
+    /* Added padding */
+    padding-top: 0;
+    /* Remove top padding to accommodate ribbon */
+}
+
+.banner-leadform .ribbon {
+    background-color: #f8a504;
+    color: #fff;
+    /* Bolder text */
+    font-weight: 600;
+    /* Larger font */
+    font-size: 18px;
+    padding: 12px 20px;
+    margin: 0 -15px 15px -15px;
+    /* Span across the padded container */
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    text-align: center;
+    line-height: 1.5;
+}
+
+
+/* Remove the complex fold spans as they are not rendering correctly */
+
+.banner-leadform .fold {
+    display: none;
+}
+
+.banner-leadform form {
+    width: 100%;
+}
+
+.banner-leadform .form-group {
+    margin-bottom: 12px;
+    /* Consistent spacing */
+}
+
+.banner-leadform .form-group label {
+    display: block;
+    /* Ensure labels are on their own line */
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #333;
+    text-align: left;
+}
+
+.banner-leadform .form-control {
+    height: 45px;
+    /* Taller input fields */
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.banner-leadform .form-control:focus {
+    border-color: #f8a504;
+    box-shadow: 0 0 8px rgba(248, 165, 4, 0.3);
+}
+
+.banner-leadform textarea.form-control {
+    height: 80px;
+    /* Taller textarea */
+    resize: vertical;
+}
+
+.banner-leadform .errorname,
+.banner-leadform .errorphone,
+.banner-leadform .errorphone1,
+.banner-leadform .erroremail,
+.banner-leadform .errormobile {
+    font-size: 12px;
+    margin-top: 5px;
+    /* Keep it hidden by default */
+    display: none;
+}
+
+.banner-leadform button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    margin-top: 10px;
+}

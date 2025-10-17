@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <link rel="shortcut icon" type="image/x-icon" href="assets/aselogo.png" />
+
+    <title>Our Services | ASE Infrastructure - Home Construction Company</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Explore the wide range of construction services offered by ASE Infrastructure, from residential and commercial projects to e-monitoring and project management.">
+    <meta name="keywords" content="construction services, home building, commercial construction, project management, e-monitoring, ASE Infrastructure services">
+
+    <link rel="stylesheet" type="text/css" href="new-assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="new-assets/css/fontawesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="new-assets/css/animate.css">
+    <link rel="stylesheet" type="text/css" href="new-assets/css/owl.carousel.min.css">
+
+    <link rel="stylesheet" type="text/css" href="new-assets/css/magnific-popup.min.css">
+
+    <link rel="stylesheet" type="text/css" href="new-assets/css/loader.min.css">
+
+    <link rel="stylesheet" type="text/css" href="new-assets/css/flaticon.min.css">
+
+    <link rel="stylesheet" type="text/css" href="new-assets/css/skin/skin-1.css">
+
+    <link rel="stylesheet" type="text/css" href="new-assets/css/switcher.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" type="text/css" href="new-assets/css/style.css">
+
+    <link rel="stylesheet" type="text/css" href="new-assets/css/header.css">
+    <link rel="stylesheet" type="text/css" href="new-assets/css/responsive.min.css">
+    <link rel="stylesheet" type="text/css" href="new-assets/css/footer.css">
+    <link rel="stylesheet" type="text/css" href="new-assets/css/responsive.css">
+    <link rel="stylesheet" type="text/css" href="new-assets/css/custom.css">
+
+    <link rel="stylesheet" type="text/css" href="new-assets/css/owl.carousel.min.css">
+
+    <link rel="stylesheet" type="text/css" href="new-assets/css/services.css">
+
+    <!-- GSAP Animation Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <!-- Custom Animations -->
+    <script src="new-assets/js/animations.js"></script>
+    <style>
+        /* --- Alignment Fix for Service Cards --- */
+        
+        .service-card-row {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        /* --- Font Color Adjustments for Service Cards --- */
+        
+        .service-card .mt-icon-box-content h4 {
+            color: #222;
+            /* Dark charcoal for strong headings */
+        }
+        
+        .service-card .mt-icon-box-content p {
+            color: #555;
+            /* Softer grey for readable body text */
+        }
+        /* --- Service Highlights Section --- */
+        /* NEW: Wrapper to contain the arrows */
+        
+        .carousel-wrapper {
+            position: relative;
+        }
+        
+        .service-highlights-grid {
+            /* display: grid; */
+            /* This line was commented out, which is correct for Owl Carousel */
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-highlight-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+        }
+        /* --- Image & Hover Effect --- */
+        
+        .service-highlight-item img {
+            height: 35vh;
+            width: 35vw;
+            object-fit: cover;
+            object-position: center;
+            transition: transform 0.4s ease-in-out, filter 0.4s ease;
+        }
+        
+        .service-highlight-item:hover img {
+            transform: scale(1.1);
+            filter: blur(3px) brightness(0.8);
+        }
+        /* --- Overlay Content --- */
+        
+        .service-highlight-item .overlay-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.1));
+            /* Made gradient stronger for visibility */
+            color: #fff;
+            opacity: 1;
+            transition: background 0.4s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            /* Align content to the bottom */
+            padding: 25px;
+            text-align: left;
+        }
+        /* UPDATED: Stronger overlay on hover for better text contrast */
+        
+        .service-highlight-item:hover .overlay-content {
+            background: rgba(0, 0, 0, 0.7);
+        }
+        
+        .overlay-content h4 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.5rem;
+            color: #fff;
+            margin: 0 0 10px;
+            transition: transform 0.3s ease-out, color 0.3s ease, text-shadow 0.3s ease;
+            /* NEW: Added text-shadow for improved readability */
+            text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+        }
+        
+        .service-highlight-item:hover .overlay-content h4 {
+            transform: translateY(-5px);
+            color: #ffc107;
+            /* Bright yellow on hover */
+            text-shadow: 0 0 10px rgba(255, 193, 7, 0.7);
+            /* Glowing effect */
+        }
+        /* --- Popup Icon --- */
+        
+        .overlay-content .popup-icon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            color: #fff;
+            opacity: 0;
+            transform: scale(0.8);
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+        
+        .service-highlight-item:hover .popup-icon {
+            opacity: 1;
+            transform: scale(1) rotate(90deg);
+            /* Added rotation for a dynamic effect */
+        }
+        
+        header.main-header {
+            background-color: #ffffff;
+        }
+        
+        .main-header .logo {
+            padding: 0px 0;
+            margin: 0px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .main-header .logo img {
+            height: 75px;
+            padding: 0px;
+            width: 150px;
+            transition: transform 0.3s ease;
+        }
+        
+        .main-header .logo:hover img {
+            transform: scale(1.05);
+        }
+        /* --- Our Projects Section --- */
+        
+        .project-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            height: 350px;
+            /* Uniform height for all items */
+            background: #333;
+        }
+        
+        .project-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease, opacity 0.4s ease;
+        }
+        
+        .project-item:hover img {
+            transform: scale(1.1);
+            opacity: 0.4;
+        }
+        
+        .project-item .overlay-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+            color: #fff;
+            opacity: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            /* Align content to the bottom */
+            align-items: flex-start;
+            /* Align text to the left */
+            padding: 25px;
+            text-align: left;
+            transition: opacity 0.4s ease;
+        }
+        
+        .project-item:hover .overlay-content {
+            opacity: 1;
+        }
+        
+        .overlay-content h4 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 0 10px;
+            transform: translateY(20px);
+            transition: transform 0.4s ease;
+        }
+        
+        .project-item:hover .overlay-content h4,
+        .project-item:hover .overlay-content p {
+            transform: translateY(0);
+        }
+        
+        .overlay-content .popup-icon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 15px;
+            color: rgba(255, 255, 255, 0.7);
+            opacity: 1;
+            /* Make the icon visible by default */
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+        
+        .project-item:hover .popup-icon {
+            transform: scale(1.3);
+            color: #ffffff;
+        }
+        /* --- Animation Styles for Service Highlights Carousel --- */
+        
+        .owl-item .service-highlight-item {
+            transition: transform 0.4s ease, opacity 0.4s ease;
+            transform: scale(0.9);
+            opacity: 0.7;
+            filter: grayscale(50%);
+        }
+        
+        .owl-item.active.center .service-highlight-item {
+            transform: scale(1);
+            opacity: 1;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            filter: grayscale(0%);
+        }
+        /* --- Separator Hover Effect --- */
+        
+        .section-head:hover .mt-separator {
+            width: 100px;
+            /* Increased width on hover */
+            background-color: #f8a504;
+            /* Change color on hover */
+        }
+        
+        .mt-separator {
+            transition: width 0.4s ease, background-color 0.4s ease;
+            /* Smooth transition */
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="main-header" id="mainHeader">
+        <a href="index.html" class="logo">
+            <img src="assets/aselogo.png" alt="ASE Infrastructure Logo">
+        </a>
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainNav">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="how-it-works.html">How It Works</a></li>
+                <li><a href="aboutus.html">About Us</a></li>
+                <li><a href="careers.html">Careers</a></li>
+                <li><a href="contactus.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="page-wraper">
+        <div class="page-content">
+            <div class="mt-bnr-inr overlay-wraper" data-stellar-background-ratio="0.5" style="background-image:url(new-assets/images/background/Frame\ 83.png);">
+                <div class="container">
+                    <div class="mt-bnr-inr-entry">
+                        <div class="banner-title-outer">
+                            <div class="banner-title-name">
+                                <h2 class="m-b0" style="color: #b02024;">Our Services</h2>
+                            </div>
+                        </div>
+                        <div>
+                            <ul class="mt-breadcrumb breadcrumb-style-2">
+                                <li><a href="index.html">Home</a></li>
+                                <li>Services</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <section class="section-full p-t80 p-b50 bg-white">
+                <div class="container">
+                    <div class="section-head text-center">
+                        <h2 class="text-uppercase">Comprehensive Construction Solutions</h2>
+                        <p>Your dream, our expertise — from concept to completion, built on quality, transparency, and innovation</p>
+                    </div><br>
+                    <div class="row service-card-row">
+                        <div class="col-md-4 col-sm-6 m-b30">
+                            <div class="mt-icon-box-wraper center service-card">
+                                <div class="mt-icon-box-sm radius bg-primary m-b20"><span class="icon-cell"><i class="fa fa-house"></i></span></div>
+                                <div class="mt-icon-box-content">
+                                    <h4 class="mt-tilte text-uppercase">Residential Projects</h4>
+                                    <p>Your dream home, built from the ground up — customized to perfection and delivered with complete transparency</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6 m-b30">
+                            <div class="mt-icon-box-wraper center service-card">
+                                <div class="mt-icon-box-sm radius bg-primary m-b20"><span class="icon-cell"><i class="fa fa-building"></i></span></div>
+                                <div class="mt-icon-box-content">
+                                    <h4 class="mt-tilte text-uppercase">Commercial Projects</h4>
+                                    <p>Building commercial spaces that inspire success — with unmatched quality and punctual delivery</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6 m-b30">
+                            <div class="mt-icon-box-wraper center service-card">
+                                <div class="mt-icon-box-sm radius bg-primary m-b20"><span class="icon-cell"><i class="fa fa-cogs"></i></span></div>
+                                <div class="mt-icon-box-content">
+                                    <h4 class="mt-tilte text-uppercase">Digital E-Monitoring</h4>
+                                    <p>Your project, always within reach — get live updates, reports, and real-time surveillance for total confidence and peace of mind</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="section-full p-t40 p-b50 bg-gray">
+                <div class="container">
+                    <!-- TITLE START -->
+                    <div class="section-head text-center">
+                        <h2 class="text-uppercase">Our Projects</h2>
+                        <div class="mt-separator-outer">
+                            <div class="mt-separator bg-primary"></div>
+                        </div>
+                    </div>
+                    <!-- TITLE END -->
+                    <div class="section-content">
+                        <div class="mfp-gallery work-grid row clearfix">
+                            <!-- ITEM 1 -->
+                            <div class="col-lg-4 col-md-6 m-b30">
+                                <div class="project-item">
+                                    <img src="./new-assets/images/icon/img1.jpg?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=600" alt="Kondapur, Hyderabad Project" />
+                                    <div class="overlay-content">
+                                        <h4>Gajuwaka, Visakhapatnam <br>1400 Sft</h4>
+                                        <p>Residential Project</p>
+                                        <a class="mfp-link popup-icon" href="./new-assets/images/icon/img1.jpg?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1200"><i class="fa fa-search-plus"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- ITEM 2 -->
+                            <div class="col-lg-4 col-md-6 m-b30">
+                                <div class="project-item">
+                                    <img src="./new-assets/images/icon/img4.jpg?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=600" alt="TS47 Project" />
+                                    <div class="overlay-content">
+                                        <h4>Visakhapatnam</h4>
+                                        <p>Modern Home</p>
+                                        <a class="mfp-link popup-icon" href="./new-assets/images/icon/img4.jpg?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1200"><i class="fa fa-search-plus"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- ITEM 3 -->
+                            <div class="col-lg-4 col-md-6 m-b30">
+                                <div class="project-item">
+                                    <img src="./new-assets/images/icon/img7.jpg?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=600" alt="TS36 Project" />
+                                    <div class="overlay-content">
+                                        <h4>Visakhapatnam</h4>
+                                        <p>Custom Design</p>
+                                        <a class="mfp-link popup-icon" href="./new-assets/images/icon/img7.jpg?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1200"><i class="fa fa-search-plus"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- ITEM 4 -->
+                            <div class="col-lg-4 col-md-6 m-b30">
+                                <div class="project-item">
+                                    <img src="./new-assets/images/icon/img2.jpg?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=600" alt="Commercial Project" />
+                                    <div class="overlay-content">
+                                        <h4>Visakhapatnam<br>2500 Sft</h4>
+                                        <p>Commercial Build</p>
+                                        <a class="mfp-link popup-icon" href="./new-assets/images/icon/img2.jpg?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1200"><i class="fa fa-search-plus"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- ITEM 5 -->
+                            <div class="col-lg-4 col-md-6 m-b30">
+                                <div class="project-item">
+                                    <img src="./new-assets/images/icon/img5.jpg?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=600" alt="Luxury Villa Project" />
+                                    <div class="overlay-content">
+                                        <h4>Madhurawada, Visakhapatnam</h4>
+                                        <p>Luxury Villa</p>
+                                        <a class="mfp-link popup-icon" href="./new-assets/images/icon/img5.jpg?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1200"><i class="fa fa-search-plus"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- ITEM 6 -->
+                            <div class="col-lg-4 col-md-6 m-b30">
+                                <div class="project-item">
+                                    <img src="./new-assets/images/icon/img6.jpg?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=600" alt="Apartment Complex Project" />
+                                    <div class="overlay-content">
+                                        <h4>Seethammadhara, Visakhapatnam</h4>
+                                        <p>Apartment Complex</p>
+                                        <a class="mfp-link popup-icon" href="./new-assets/images/icon/img6.jpg?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1200"><i class="fa fa-search-plus"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <section class="section-full p-t80 p-b80 bg-gray">
+                <div class="container">
+                    <div class="section-head text-center">
+                        <h2 class="text-uppercase">Our Service Highlights</h2>
+                        <div class="mt-separator-outer">
+                            <div class="mt-separator bg-primary"></div>
+                        </div>
+                        <p>Your project, perfectly managed — from start to finish with expert attention to every detail</p>
+                    </div>
+                    <div class="carousel-wrapper">
+                        <div class="service-highlights-grid owl-carousel owl-theme">
+                            <a href="new-assets/images/icon/architecture.jpg" class="service-highlight-item mfp-link">
+                                <img src="new-assets/images/icon/architecture.jpg" alt="Architectural Design" />
+                                <div class="overlay-content">
+                                    <h4>Architectural Design</h4>
+                                    <i class="fa fa-search-plus popup-icon"></i>
+                                </div>
+                            </a>
+                            <a href="new-assets/images/icon/interior.jpg?q=80" class="service-highlight-item mfp-link">
+                                <img src="new-assets/images/icon/interior.jpg?q=80" alt="Interior Design" />
+                                <div class="overlay-content">
+                                    <h4>Interior Design</h4>
+                                    <i class="fa fa-search-plus popup-icon"></i>
+                                </div>
+                            </a>
+                            <a href="new-assets/images/icon/project management.jpg" class="service-highlight-item mfp-link">
+                                <img src="new-assets/images/icon/project management.jpg" alt="Project Management" />
+                                <div class="overlay-content">
+                                    <h4>Project Management</h4>
+                                    <i class="fa fa-search-plus popup-icon"></i>
+                                </div>
+                            </a>
+                            <a href="new-assets/images/icon/renovation and remodeling.jpg" class="service-highlight-item mfp-link">
+                                <img src="new-assets/images/icon/renovation and remodeling.jpg" alt="Renovation Services" />
+                                <div class="overlay-content">
+                                    <h4>Renovation & Remodeling</h4>
+                                    <i class="fa fa-search-plus popup-icon"></i>
+                                </div>
+                            </a>
+                            <a href="new-assets/images/icon/smart_integration.jpg" class="service-highlight-item mfp-link">
+                                <img src="new-assets/images/icon/smart_integration.jpg" alt="Smart Home Integration" />
+                                <div class="overlay-content">
+                                    <h4>Smart Home Integration</h4>
+                                    <i class="fa fa-search-plus popup-icon"></i>
+                                </div>
+                            </a>
+                            <a href="new-assets/images/icon/e monitoring.jpg" class="service-highlight-item mfp-link">
+                                <img src="new-assets/images/icon/e monitoring.jpg" alt="E-Monitoring" />
+                                <div class="overlay-content">
+                                    <h4>E-Monitoring</h4>
+                                    <i class="fa fa-search-plus popup-icon"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <footer class="site-footer" style="margin-top: 20px;">
+            <div class="footer-container">
+                <div class="footer-logo-section">
+                    <h3>About ASE Infra</h3>
+                    <a href="index.html"><img src="assets/aselogo.png" alt="ASE Infrastructure Logo" class="footer-logo" style="background: #fff; padding: 5px; border-radius: 5px;"></a>
+                    <p>India's Best tech-powered construction company, simplifying the process by bringing everything you need under one roof for a transparent and smooth journey.</p>
+                </div>
+
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="how-it-works.html">How It Works</a></li>
+                        <li><a href="aboutus.html">About Us</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="contactus.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contact Info</h3>
+                    <ul class="contact-details">
+                        <li><i class="fa-solid fa-location-dot"></i>LIG-A85, North Extension, Balayya Sastri Layout, Seethammadara, Visakhapatnam, Andhra Pradesh 530013</li>
+                        <li><i class="fa-solid fa-phone"></i><a href="tel:6305504248">+91 96666 96889</a></li>
+                        <li><i class="fa-solid fa-envelope"></i><a href="mailto:info@wehouse.in">info@eswarigroup.com</a></li>
+                    </ul>
+                    <ul class="social-icons">
+                        <li><a href="https://www.facebook.com/aseinfrastructuresforyou/" aria-label="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="https://x.com/aseInfrastruct2" aria-label="Twitter" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="https://www.linkedin.com/company/ase-infrastructures/" aria-label="LinkedIn" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+                        <li><a href="https://www.instagram.com/ase_infra/" aria-label="Instagram" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-bottom">
+                    <p>&copy; <span id="current-year">2025</span> ASE Infrastructure. All Rights Reserved.</p>
+                </div>
+            </div>
+        </footer>
+        <button class="scroltop"><span class="fa fa-angle-up  relative" id="btn-vibrate"></span></button>
+    </div>
+    <script src="new-assets/js/jquery.min.js"></script>
+    <script src="new-assets/js/bootstrap.min.js"></script>
+    <script src="new-assets/js/magnific-popup.min.js"></script>
+    <script src="new-assets/js/owl.carousel.min.js"></script>
+    <script src="new-assets/js/custom.min.js"></script>
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        // --- Animate Section Headings ---
+        gsap.from(".section-head h2", {
+            opacity: 0,
+            yPercent: 30,
+            scale: 0.95,
+            duration: 1,
+            ease: "power3.out",
+            scrollTrigger: {
+                trigger: ".section-head",
+                start: "top 85%",
+                toggleActions: "play none none reverse"
+            }
+        });
+
+        gsap.from(".section-head p", {
+            opacity: 0,
+            yPercent: 20,
+            duration: 1,
+            delay: 0.2,
+            ease: "power2.out",
+            scrollTrigger: {
+                trigger: ".section-head",
+                start: "top 85%",
+                toggleActions: "play none none reverse"
+            }
+        });
+
+        // --- Animate Separator Line ---
+        gsap.from(".mt-separator", {
+            scaleX: 0,
+            transformOrigin: "left center",
+            duration: 1,
+            ease: "power3.out",
+            scrollTrigger: {
+                trigger: ".mt-separator",
+                start: "top 90%",
+                toggleActions: "play none none reverse"
+            }
+        });
+
+        // --- Service Cards Animation ---
+        gsap.utils.toArray(".service-card").forEach((card, i) => {
+            gsap.from(card, {
+                opacity: 0,
+                yPercent: 20,
+                scale: 0.85,
+                rotation: i % 2 === 0 ? -3 : 3,
+                duration: 1,
+                delay: i * 0.15,
+                ease: "power3.out",
+                scrollTrigger: {
+                    trigger: card,
+                    start: "top 90%",
+                    toggleActions: "play none none reverse"
+                }
+            });
+
+            // Hover Effect
+            card.addEventListener("mouseenter", () => {
+                gsap.to(card, {
+                    scale: 1.05,
+                    yPercent: -3,
+                    rotation: 0,
+                    boxShadow: "0 15px 30px rgba(0,0,0,0.2)",
+                    duration: 0.3,
+                    ease: "power2.out"
+                });
+            });
+            card.addEventListener("mouseleave", () => {
+                gsap.to(card, {
+                    scale: 1,
+                    yPercent: 0,
+                    rotation: i % 2 === 0 ? -3 : 3,
+                    boxShadow: "0 5px 15px rgba(0,0,0,0.1)",
+                    duration: 0.3,
+                    ease: "power2.inOut"
+                });
+            });
+        });
+
+        // --- Project Items Animation ---
+        gsap.utils.toArray(".project-item").forEach((item, i) => {
+            gsap.from(item, {
+                opacity: 0,
+                yPercent: 20,
+                scale: 0.9,
+                rotation: i % 2 === 0 ? -2 : 2,
+                duration: 1,
+                delay: i * 0.1,
+                ease: "power3.out",
+                scrollTrigger: {
+                    trigger: item,
+                    start: "top 90%",
+                    toggleActions: "play none none reverse"
+                }
+            });
+
+            item.addEventListener("mouseenter", () => {
+                gsap.to(item, {
+                    scale: 1.05,
+                    yPercent: -3,
+                    rotation: 0,
+                    boxShadow: "0 15px 30px rgba(0,0,0,0.2)",
+                    duration: 0.3,
+                    ease: "power2.out"
+                });
+            });
+            item.addEventListener("mouseleave", () => {
+                gsap.to(item, {
+                    scale: 1,
+                    yPercent: 0,
+                    rotation: i % 2 === 0 ? -2 : 2,
+                    boxShadow: "0 5px 15px rgba(0,0,0,0.1)",
+                    duration: 0.3,
+                    ease: "power2.inOut"
+                });
+            });
+        });
+
+        // --- Service Highlights Carousel Animation ---
+        gsap.utils.toArray(".service-highlight-item").forEach((item, i) => {
+            gsap.from(item, {
+                opacity: 0,
+                yPercent: 20,
+                scale: 0.9,
+                duration: 0.8,
+                delay: i * 0.1,
+                ease: "power3.out",
+                scrollTrigger: {
+                    trigger: item,
+                    start: "top 90%",
+                    toggleActions: "play none none reverse"
+                }
+            });
+
+            item.addEventListener("mouseenter", () => {
+                gsap.to(item, {
+                    scale: 1.05,
+                    yPercent: -3,
+                    duration: 0.3,
+                    ease: "power2.out"
+                });
+            });
+            item.addEventListener("mouseleave", () => {
+                gsap.to(item, {
+                    scale: 1,
+                    yPercent: 0,
+                    duration: 0.3,
+                    ease: "power2.inOut"
+                });
+            });
+        });
+    </script>
+
+
+
+
+
+
+    <script>
+        // --- JavaScript for Mobile Navigation Toggle ---
+        document.querySelector('.navbar-toggle').addEventListener('click', function() {
+            document.querySelector('.main-nav').classList.toggle('show');
+        });
+
+        // --- JavaScript for Header Scroll Effect ---
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('mainHeader');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Automatically update the year in the footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // --- Initialize Owl Carousel for Service Highlights ---
+        $(document).ready(function() {
+            $('.service-highlights-grid').owlCarousel({
+                loop: true,
+                margin: 30,
+                nav: false,
+                dots: true,
+                autoplay: true,
+                autoplayTimeout: 3000,
+                autoplayHoverPause: true,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    768: {
+                        items: 2
+                    },
+                    1024: {
+                        items: 3
+                    }
+                }
+            });
+
+            // --- Initialize Magnific Popup for the "Our Projects" gallery ---
+            $('.mfp-gallery').magnificPopup({
+                delegate: 'a.mfp-link', // child items selector, by clicking on it popup will open
+                type: 'image', // The type of content that is loaded in the popup
+                gallery: {
+                    enabled: true // Enable gallery mode
+                }
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate the header
+            gsap.from("#mainHeader", {
+                duration: 1,
+                y: -80,
+                opacity: 0,
+                ease: "power3.out"
+            });
+
+            // Animate logo
+            gsap.from(".logo img", {
+                duration: 1,
+                opacity: 0,
+                scale: 0.8,
+                delay: 0.3,
+                ease: "back.out(1.7)"
+            });
+
+            // Animate navigation links with stagger
+            gsap.from(".main-nav ul li", {
+                duration: 0.8,
+                opacity: 0,
+                y: -20,
+                delay: 0.6,
+                stagger: 0.15,
+                ease: "power2.out"
+            });
+
+            // Hover animation for nav links
+            document.querySelectorAll(".main-nav ul li a").forEach(link => {
+                const originalColor = getComputedStyle(link).color;
+                link.addEventListener("mouseenter", () => gsap.to(link, {
+                    scale: 1.1,
+                    duration: 0.2,
+                    color: "#f5a623"
+                }));
+                link.addEventListener("mouseleave", () => gsap.to(link, {
+                    scale: 1,
+                    duration: 0.2,
+                    color: originalColor
+                }));
+            });
+        });
+    </script>
+    <script>
+        const footer = document.querySelector(".site-footer");
+
+        // Create a paused GSAP timeline
+        const footerTimeline = gsap.timeline({
+            paused: true
+        });
+
+        // Footer animation sequence
+        footerTimeline
+            .from(".footer-logo-section, .footer-links, .footer-contact", {
+                opacity: 0,
+                y: 40,
+                duration: 0.8,
+                stagger: 0.2,
+                ease: "power3.out"
+            })
+            .from(".footer-container h3", {
+                opacity: 0,
+                y: 20,
+                duration: 0.5,
+                stagger: 0.15,
+                ease: "power2.out"
+            }, "-=0.4")
+            .from(".footer-links ul li, .contact-details li", {
+                opacity: 0,
+                x: -20,
+                duration: 0.5,
+                stagger: 0.1,
+                ease: "power2.out"
+            }, "-=0.5")
+            .from(".social-icons li", {
+                opacity: 0,
+                y: 15,
+                duration: 0.5,
+                stagger: 0.1,
+                ease: "back.out(1.7)"
+            }, "-=0.5");
+
+        // Trigger animation on hover
+        footer.addEventListener("mouseenter", () => footerTimeline.play());
+        footer.addEventListener("mouseleave", () => footerTimeline.reverse());
+    </script>
+
+</body>
+
+
+</html>

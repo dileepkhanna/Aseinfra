@@ -1,0 +1,37 @@
+/* New Color Palette Overrides */
+
+.bg-primary,
+.site-button,
+.btn-effect:after,
+.mt-icon-box-wraper .mt-icon-box-sm,
+.header-style-1 .header-nav .nav>li.active>a {
+    background-color: #b02024 !important;
+}
+
+.site-button:hover,
+.site-button.btn-effect:hover:after {
+    background-color: #8f9194 !important;
+}
+
+.site-button-link:hover,
+.site-button-link[data-hover]:hover {
+    color: #8f9194 !important;
+}
+
+.text-primary,
+.site-button-link,
+.site-button-link[data-hover]:hover,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.header-style-1 .header-nav .nav>li>a:hover,
+.header-style-1 .header-nav .nav>li>a.active {
+    color: #b02024 !important;
+}
+
+.mt-separator.bg-primary {
+    background-color: #8f9194 !important;
+}

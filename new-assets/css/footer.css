@@ -1,0 +1,262 @@
+/* Basic Body Styling for Demo */
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /* Ensures footer sticks to the bottom */
+}
+
+main {
+    flex-grow: 1;
+    /* Pushes the footer down */
+    padding: 20px;
+    text-align: center;
+}
+
+
+/* Footer Styling */
+
+.site-footer {
+    background-color: #1e272e;
+    /* Dark, modern background */
+    color: #a4b0be;
+    /* MODIFIED: Changed bottom padding to 0 */
+    padding: 25px 0 0;
+    font-size: 15px;
+    line-height: 24px;
+}
+
+.footer-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    /* Using grid for flexible and aligned layout */
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    /* Responsive columns */
+    /* MODIFIED: Increased gap for more space between columns */
+    gap: 45px;
+}
+
+.footer-about,
+.footer-logo-section,
+.footer-links,
+.footer-contact {
+    padding: 0 15px;
+}
+
+.footer-logo-section .footer-logo {
+    width: 110px;
+    /* Adjust logo size as needed */
+    margin-bottom: 15px;
+}
+
+.footer-logo-section p {
+    font-size: 14px;
+}
+
+.footer-about h3,
+.footer-logo-section h3,
+.footer-links h3,
+.footer-contact h3 {
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    /* Adjusted margin for new underline position */
+    position: relative;
+    display: inline-block;
+    /* Needed for the underline to fit content */
+}
+
+
+/* Underline effect for headings */
+
+.footer-about h3::after,
+.footer-logo-section h3::after,
+.footer-links h3::after,
+.footer-contact h3::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 100%;
+    /* Underline will span the full width of the heading */
+    height: 3px;
+    background-color: #ff5722;
+    /* A bright accent color */
+    border-radius: 2px;
+    /* NEW HOVER EFFECT: Animation setup */
+    transform: scaleX(0);
+    /* Start with no width */
+    transform-origin: left;
+    /* Grow from the left */
+    transition: transform 0.35s ease-in-out;
+}
+
+
+/* NEW HOVER EFFECT: Trigger the underline animation */
+
+.footer-about h3:hover::after,
+.footer-logo-section h3:hover::after,
+.footer-links h3:hover::after,
+.footer-contact h3:hover::after {
+    transform: scaleX(1);
+    /* Grow to full width on hover */
+}
+
+.footer-about p {
+    margin-bottom: 20px;
+}
+
+
+/* Quick Links Styling */
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links ul li a {
+    color: #a4b0be;
+    text-decoration: none;
+    display: block;
+    padding: 4px 0;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+}
+
+
+/* Enhanced hover effect for links */
+
+.footer-links ul li a:hover {
+    color: #ffffff;
+    padding-left: 10px;
+    /* Moves text to the right */
+}
+
+.footer-links ul li a::before {
+    content: '\f105';
+    /* Font Awesome right arrow */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    left: -5px;
+    opacity: 0;
+    color: #ff5722;
+    transition: all 0.3s ease-in-out;
+}
+
+.footer-links ul li a:hover::before {
+    opacity: 1;
+    /* Shows the arrow on hover */
+    left: 0;
+}
+
+
+/* Contact & Social Icons */
+
+.contact-details,
+.social-icons {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-details li {
+    margin-bottom: 10px;
+    align-items: center;
+}
+
+
+/* NEW HOVER EFFECT: Styling and transition for contact links */
+
+.contact-details li a {
+    color: #a4b0be;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-details li a:hover {
+    color: #ff5722;
+    /* Highlight color on hover */
+}
+
+.contact-details li i {
+    color: #ff5722;
+    margin-right: 12px;
+    font-size: 18px;
+    width: 20px;
+    text-align: center;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.social-icons li a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background-color: #303952;
+    color: #ffffff;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+
+/* NEW HOVER EFFECT: Added icon rotation */
+
+.social-icons li a .fab,
+.social-icons li a .fas {
+    transition: transform 0.3s ease-in-out;
+}
+
+
+/* Enhanced hover effect for social icons */
+
+.social-icons li a:hover {
+    background-color: #ff5722;
+    transform: translateY(-4px);
+    /* Lifts the icon up */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+/* NEW HOVER EFFECT: Trigger icon rotation */
+
+.social-icons li a:hover .fab,
+.social-icons li a:hover .fas {
+    transform: rotate(15deg);
+}
+
+
+/* Footer Bottom Bar */
+
+.footer-bottom {
+    /* MODIFIED: Reduced top margin to decrease height */
+    margin-top: 20px;
+    /* Adjusted for better spacing */
+    padding-top: 10px;
+    border-top: 1px solid #303952;
+    text-align: center;
+    grid-column: 1 / -1;
+    /* Makes it span all columns */
+}
+
+.footer-bottom p {
+    margin: 0;
+    /* MODIFIED: Changed bottom padding to 0 */
+    padding: 5px 0 0;
+}

@@ -1,0 +1,30 @@
+/* --- Custom Styles for Service Cards on services.html --- */
+
+.service-card {
+    background-color: #ffffff;
+    border: 1px solid #e9e9e9;
+    border-radius: 8px;
+    padding: 35px 30px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.07);
+    height: 100%;
+    /* Ensures all cards in a row are the same height */
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    border-color: #f8a504;
+}
+
+.service-card .mt-icon-box-sm {
+    transition: all 0.3s ease-in-out;
+}
+
+.service-card:hover .mt-icon-box-sm {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 8px 20px rgba(248, 165, 4, 0.4);
+}
+
+
+/* --- Add more service-specific styles below --- */
